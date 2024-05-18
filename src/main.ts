@@ -5,8 +5,7 @@ import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  const PORT = process.env.PORT || 3000;
   app.useStaticAssets(join(__dirname, '..', 'uploads'));
-  await app.listen(PORT);
+  await app.listen(3000);
 }
 bootstrap();
