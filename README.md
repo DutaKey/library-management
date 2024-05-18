@@ -52,7 +52,7 @@ Selamat datang di dokumentasi untuk Aplikasi Library Management. Dokumentasi ini
    ```
 
 6. **Akses Aplikasi dan Pengujian dengan Postman:**
-   Setelah aplikasi berhasil dijalankan, Bapak/Ibu dapat mengaksesnya melalui `http://localhost:3000`. Selanjutnya, untuk menguji fungsionalitas API, gunakan Postman Collection yang telah disertakan dalam repository ini. Impor koleksi Postman ke aplikasi Postman Bapak/Ibu dan jalankan permintaan API sesuai kebutuhan.
+   Setelah aplikasi berhasil dijalankan, untuk menguji fungsionalitas API, Bapak/Ibu gunakan Postman Collection yang telah disertakan dalam repository ini. Impor koleksi Postman ke aplikasi Postman Bapak/Ibu dan jalankan permintaan API sesuai kebutuhan.
 
 ---
 
