@@ -1,73 +1,64 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Dokumentasi Aplikasi Library Management
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Selamat datang di dokumentasi untuk Aplikasi Library Management. Dokumentasi ini akan membantu Bapak/Ibu melalui langkah-langkah untuk mengatur dan menjalankan aplikasi dengan lancar.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
+ Langkah 1: Setup Awal
 
-## Description
+1. **Persyaratan Sistem:**
+   Pastikan sistem Bapak/Ibu memenuhi persyaratan berikut sebelum melanjutkan:
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+   - Node.js versi terbaru telah terinstal di sistem Bapak/Ibu.
+   - MySQL telah terinstal dan berjalan di localhost.
 
-## Installation
+2. **Instalasi Dependensi:**
+   Buka terminal Bapak/Ibu dan arahkan ke direktori proyek. Kemudian jalankan perintah berikut untuk menginstal semua dependensi yang diperlukan:
+   ```bash
+   npm install
+   ```
 
-```bash
-$ npm install
-```
+3. **Konfigurasi Database:**
+   Pastikan Bapak/Ibu telah membuat database MySQL dengan nama `library_db`.
 
-## Running the app
+4. **Setup `src/app.module.ts`:**
+   Dalam berkas `src/app.module.ts`, pastikan Bapak/Ibu telah mengonfigurasi koneksi database seperti berikut:
 
-```bash
-# development
-$ npm run start
+   ```typescript
+   @Module({
+     imports: [
+       TypeOrmModule.forRoot({
+         type: 'mysql',
+         host: 'localhost',
+         port: 3306,
+         username: 'root',
+         password: '',
+         database: 'library_db',
+         autoLoadEntities: true,
+         synchronize: true,
+       }),
+       BooksModule,
+       CategoriesModule,
+     ],
+   })
+   ```
 
-# watch mode
-$ npm run start:dev
+   Silakan ubah pengaturan koneksi sesuai dengan kebutuhan jika diperlukan.
 
-# production mode
-$ npm run start:prod
-```
+5. **Menjalankan Aplikasi:**
+   Setelah melakukan setup awal, Bapak/Ibu dapat menjalankan aplikasi dengan perintah:
 
-## Test
+   ```bash
+   npm run start
+   ```
 
-```bash
-# unit tests
-$ npm run test
+6. **Akses Aplikasi dan Pengujian dengan Postman:**
+   Setelah aplikasi berhasil dijalankan, Bapak/Ibu dapat mengaksesnya melalui `http://localhost:3000`. Selanjutnya, untuk menguji fungsionalitas API, gunakan Postman Collection yang telah disertakan dalam repository ini. Impor koleksi Postman ke aplikasi Postman Bapak/Ibu dan jalankan permintaan API sesuai kebutuhan.
 
-# e2e tests
-$ npm run test:e2e
+---
 
-# test coverage
-$ npm run test:cov
-```
+#### Penutup
 
-## Support
+Terima kasih telah menguji dan mencoba aplikasi saya. Kalau ada salah bahasa saya minta maaf sebesar besarnya
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Hormat Saya
+- Duta Pasha Febrian
